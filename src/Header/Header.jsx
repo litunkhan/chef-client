@@ -39,7 +39,7 @@ const Header = () => {
          
         </div>
         <div className="navbar-end">
-        {user?<Link className="btn">Login</Link>:<Link className="btn">LogOut</Link>}
+        {user?<Link className="btn">LogOut</Link>:<Link to={'/login'} className="btn">Login</Link>}
         </div>
       </div>
     );

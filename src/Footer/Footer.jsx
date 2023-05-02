@@ -29,14 +29,14 @@ const Footer = () => {
         <div className="w-full lg:w-1/3">
           <h2 className="text-xl font-bold text-white mb-4">Follow Us</h2>
           <div className="flex">
-            <a href="#" className="text-gray-400 hover:text-white mr-4">
+            <a  className="text-gray-400 hover:text-white mr-4">
             
             <i className="fab fa-facebook"></i>
             </a>
-            <a href="#" className="text-gray-400 hover:text-white mr-4">
+            <a  className="text-gray-400 hover:text-white mr-4">
             <i className="fab fa-twitter"></i>
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a  className="text-gray-400 hover:text-white">
               <i className="fab fa-instagram"></i>
             </a>
           </div>

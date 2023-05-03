@@ -1,9 +1,12 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../Authprobider/Authprobider';
 
 const Header = () => {
-    const user = null
+   const {logOut } = useContext(AuthContext)
+    const { user} = useContext(AuthContext)
+    
     return (
         <div className="navbar bg-base-100 max-w-[1100px] mx-auto">
         <div className="navbar-start">
@@ -21,7 +24,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-3xl">Chef-Recipe</a>
+          <a className="btn btn-ghost normal-case text-2xl md:text-3xl">Chef-Recipe</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -39,7 +42,13 @@ const Header = () => {
          
         </div>
         <div className="navbar-end">
-        {user?<Link className="btn">LogOut</Link>:<Link to={'/login'} className="btn">Login</Link>}
+        {
+          user&& (
+          <div className='mr-2 md:mr-4'> <img className='w-9 rounded-full' src={user.photoURL} alt='userImage'></img></div>
+          )
+        }
+        {user?<Link className="btn" onClick={()=>logOut()}>LogOut</Link>:<Link to={'/login'} className="btn">Login</Link>}
+      
         </div>
       </div>
     );

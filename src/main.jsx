@@ -10,6 +10,10 @@ import Home from './Homepage/Home.jsx';
 import Blog from './Blog/Blog.jsx';
 import Login from './Login/Login.jsx';
 import Register from './Register/Register.jsx';
+import Authprobider from './Authprobider/Authprobider.jsx';
+import Recipess from './Recipes/Recipess.jsx';
+import Privateroute from './Privaterout/Privateroute.jsx';
+import Error from './Errorpage/Error.jsx';
 
 
 const router = createBrowserRouter([
@@ -21,6 +25,17 @@ const router = createBrowserRouter([
         path:'/',
         element:<Home></Home>
       },
+      {
+        path:'/:id',
+        element:<Privateroute><Recipess></Recipess></Privateroute>,
+        loader:({params})=> fetch(`http://localhost:4000/${params.id}`)
+
+      },
+      // {
+      //   path:'*',
+      //   element:<Error></Error>
+      //   },
+      
       {
         path:'/blog',
         element:<Blog></Blog>
@@ -35,10 +50,15 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path:'*',
+    element:<Error></Error>
+    }
+ 
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-       <RouterProvider router={router} />
+      <Authprobider><RouterProvider router={router} /></Authprobider> 
   </React.StrictMode>,
 )

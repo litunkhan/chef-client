@@ -2,6 +2,8 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Authprobider/Authprobider';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 const Header = () => {
    const {logOut } = useContext(AuthContext)
@@ -44,7 +46,7 @@ const Header = () => {
         <div className="navbar-end">
         {
           user&& (
-          <div className='mr-2 md:mr-4'> <img className='w-9 rounded-full' src={user.photoURL} alt='userImage'></img></div>
+          <div className='mr-2 md:mr-4'> <Tippy content={user.displayName}><img className='w-9 rounded-full cursor-pointer' src={user.photoURL} alt='userImage'></img></Tippy></div>
           )
         }
         {user?<Link className="btn" onClick={()=>logOut()}>LogOut</Link>:<Link to={'/login'} className="btn">Login</Link>}

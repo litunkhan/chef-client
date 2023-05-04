@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 import React, { createContext, useEffect, useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged ,signInWithPopup, GoogleAuthProvider   } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged ,signInWithPopup, GoogleAuthProvider,GithubAuthProvider   } from "firebase/auth";
 import app from '../Firebaseconfig';
 
 
@@ -13,6 +13,7 @@ const Authprobider = ({children}) => {
     const auth = getAuth(app)
    
     const provider = new GoogleAuthProvider();
+    const gitprovider = new GithubAuthProvider();
     const createuser = (email,password)=>{
         return createUserWithEmailAndPassword(auth, email, password)
     }
@@ -43,6 +44,10 @@ const Authprobider = ({children}) => {
         
         
     }
+    const gitLogin =()=>{
+       return signInWithPopup(auth, gitprovider)
+  
+    }
    
     const userInfo ={
         createuser,
@@ -50,7 +55,8 @@ const Authprobider = ({children}) => {
         logOut ,
         loaders,
         user,
-        googleLogin 
+        googleLogin,
+        gitLogin
     }
     return (
         <AuthContext.Provider value={userInfo}>

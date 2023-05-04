@@ -5,7 +5,7 @@ import { AuthContext } from '../Authprobider/Authprobider';
 
 const Login = () => {
   const [error,seterror]= useState('')
-  const {singIn,googleLogin } = useContext(AuthContext)
+  const {singIn,googleLogin,gitLogin } = useContext(AuthContext)
   const location = useLocation()
    const navigate = useNavigate()  
    const from = location.state?.from?.pathname || '/';
@@ -38,6 +38,14 @@ const Login = () => {
       }).catch((error) => {
        console.log(error.message)
       })
+   }
+   const gitlogins = ()=>{
+     gitLogin()
+     .then((result) => {
+      navigate(from ,{replace:true})
+     }).catch((error) => {
+      
+     });
    }
     return (
         <div>
@@ -72,7 +80,7 @@ const Login = () => {
         <div className="text-center">
           <span className="text-gray-600">Or login with</span>
           <div className="flex justify-center mt-4">
-            <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mx-2">
+            <button onClick={gitlogins} className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mx-2">
               GitHub
             </button>
  <button onClick={googlelogins} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-2">

@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       {
         path:'/:id',
         element:<Privateroute><Recipess></Recipess></Privateroute>,
-        loader:({params})=> fetch(`http://localhost:4000/${params.id}`)
+        loader:({params})=> fetch(`https://myapp-litunkhan.vercel.app/${params.id}`)
 
       },
       // {

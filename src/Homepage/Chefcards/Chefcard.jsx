@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Chefcard = () => {
     const [data,setdata] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:4000/')
+        fetch('https://myapp-litunkhan.vercel.app/')
         .then(res=> res.json())
         .then(datas=>{
             if(datas){

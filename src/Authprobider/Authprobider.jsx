@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 
 import React, { createContext, useEffect, useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged   } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged ,signInWithPopup, GoogleAuthProvider   } from "firebase/auth";
 import app from '../Firebaseconfig';
+
 
 export const AuthContext = createContext()
 // eslint-disable-next-line react/prop-types
@@ -10,6 +11,8 @@ const Authprobider = ({children}) => {
     const [user,setuser] = useState(null)
     const [loaders,setloaders] = useState(true)
     const auth = getAuth(app)
+   
+    const provider = new GoogleAuthProvider();
     const createuser = (email,password)=>{
         return createUserWithEmailAndPassword(auth, email, password)
     }
@@ -35,13 +38,19 @@ const Authprobider = ({children}) => {
             
           });
     }
+    const googleLogin =()=>{
+        return signInWithPopup(auth, provider)
+        
+        
+    }
    
     const userInfo ={
         createuser,
         singIn,
         logOut ,
         loaders,
-        user
+        user,
+        googleLogin 
     }
     return (
         <AuthContext.Provider value={userInfo}>

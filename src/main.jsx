@@ -1,4 +1,4 @@
-import React from 'react'
+import React  from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import {
@@ -16,6 +16,7 @@ import Privateroute from './Privaterout/Privateroute.jsx';
 import Error from './Errorpage/Error.jsx';
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/',
-        element:<Home></Home>
+        element: <Home></Home> 
       },
       {
         path:'/:id',

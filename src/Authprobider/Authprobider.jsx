@@ -15,9 +15,11 @@ const Authprobider = ({children}) => {
     const provider = new GoogleAuthProvider();
     const gitprovider = new GithubAuthProvider();
     const createuser = (email,password)=>{
+        setloaders(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
     const singIn = (email,password)=>{
+        setloaders(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
@@ -32,6 +34,7 @@ const Authprobider = ({children}) => {
     },[auth])
 
     const logOut =()=>{
+        setloaders(true)
         return signOut(auth)
         .then(() => {
             

@@ -6,9 +6,10 @@ import Footer from './Footer/Footer'
 
 
 
-function App() {
-  
 
+function App() {
+
+ 
   return (
     <>
      <Header></Header>
@@ -18,6 +19,7 @@ function App() {
      <Footer></Footer>
     </>
   )
-}
+
+ }
 
 export default App

@@ -1,9 +1,14 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
-
+import React, { useRef } from 'react';
+import { FaPrint } from 'react-icons/fa';
+import ReactToPrint from 'react-to-print';
 const Blog = () => {
+    const ref = useRef()
     return (
-        <div className='max-w-[1000px] mx-auto mt-6 mb-6'>
+        <>
+         <ReactToPrint trigger={()=> <button className='mt-1 mb-10 flex gap-2 max-w-[1000px] mx-auto'><p>Download-Pdf</p><FaPrint className='mt-1'/></button>} 
+         content={()=>ref.current}/>
+        <div ref={ref} className='max-w-[1000px] mx-auto mb-6'>
            <h1 className='text-3xl mb-2 mt-3'>
            1. what is the differences between uncontrolled and controlled components?
            </h1>
@@ -72,6 +77,7 @@ const Blog = () => {
             could create a custom hook that encapsulates that logic, making it
             easy to reuse in multiple components.</p>
         </div>
+        </>
     );
 };
 

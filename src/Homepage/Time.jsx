@@ -9,7 +9,7 @@ const Time = () => {
     const [seconds, setSeconds] = useState(0);
 
     useEffect(() => {
-      const deadline = new Date("2023-05-28"); // Set the date and time when the offer will end
+      const deadline = new Date("2023-10-28"); // Set the date and time when the offer will end
 
       const interval = setInterval(() => {
         const now = new Date().getTime();

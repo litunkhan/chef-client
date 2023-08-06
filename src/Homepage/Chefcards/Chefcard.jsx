@@ -21,11 +21,14 @@ const Chefcard = () => {
    console.log(data)
     return (
         <div className='max-w-[1200px] mx-auto'>
-            <h3 className='text-3xl text-center mt-10'>Ours chefs</h3>
+            <h3 className='text-4xl font-bold text-center mt-10'>Get to Know Our Talented Chefs</h3>
+            <p className='mt-4 text-center'>
+            Discover the masterminds behind our delicious recipes. Our team of talented chefs are passionate about creating mouth-watering dishes that are sure to impress. From classic comfort foods to exotic cuisine, explore their profiles.
+            </p>
         <div className='my-10 gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4'>
             {
                 data.map(chef=>{
-                    return  <> <div key={chef.id} className="bg-gray-300 shadow-lg rounded-lg overflow-hidden w-full   ">
+                    return  <> <div key={chef.id} className="bg-white shadow-xl rounded-lg overflow-hidden w-full   ">
                     <img
                       src={chef.picture}
                       alt="Chef"

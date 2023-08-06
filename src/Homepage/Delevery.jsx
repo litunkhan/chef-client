@@ -6,8 +6,10 @@ import image3 from './del.png'
 import image4 from './fre.png'
 const Delevery = () => {
     return (
-        <div className=' mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
-        <div className="bg-white rounded-lg overflow-hidden shadow-md flex justify-center items-center flex-col">
+      <>
+      <h2 className='text-center text-4xl font-bold mt-5'>About Ourself</h2>
+        <div className=' mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+        <div className="bg-white rounded-lg overflow-hidden shadow-xl flex justify-center items-center flex-col">
         <img src={image2} alt="name" className="w-25" />
         <div className="p-4">
           <h2 className="font-bold text-xl mb-2 text-center">Expariance chef</h2>
@@ -15,7 +17,7 @@ const Delevery = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg overflow-hidden shadow-md flex justify-center items-center flex-col">
+      <div className="bg-white rounded-lg overflow-hidden shadow-xl flex justify-center items-center flex-col">
         <img src={image4} alt="name" className="w-25" />
         <div className="p-4">
           <h2 className="font-bold text-xl mb-2 text-center">Fresh food</h2>
@@ -23,7 +25,7 @@ const Delevery = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg overflow-hidden shadow-md flex justify-center items-center flex-col">
+      <div className="bg-white rounded-lg overflow-hidden shadow-xl flex justify-center items-center flex-col">
         <img src={image3} alt="name" className="w-25" />
         <div className="p-4">
           <h2 className="font-bold text-xl mb-2 text-center">A variety of dishes</h2>
@@ -31,7 +33,7 @@ const Delevery = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg overflow-hidden shadow-md flex justify-center items-center flex-col">
+      <div className="bg-white rounded-lg overflow-hidden shadow-xl flex justify-center items-center flex-col">
         <img src={image} alt="name" className="w-25" />
         <div className="p-4">
           <h2 className="font-bold text-xl mb-2 text-center">Fast delivery</h2>
@@ -39,6 +41,7 @@ const Delevery = () => {
         </div>
       </div>
       </div>
+      </>
     );
 };
 

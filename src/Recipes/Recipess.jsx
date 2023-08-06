@@ -22,7 +22,7 @@ const Recipess = () => {
 <p className="text-sm md:text-base text-gray-500">Years of Experience: {items.years_of_experience}</p>
       </div>
     </div>
-      <div className='text-3xl mt-3 text-center'>Top 3 recipes </div>
+      <div className='text-4xl font-bold mt-3 text-center'>Top 3 recipes </div>
      <Recipescard recipe={items}></Recipescard>
         </div>
     );
